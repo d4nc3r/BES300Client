@@ -4,6 +4,7 @@
     <mat-card-subtitle>We Have Some Work To Do.</mat-card-subtitle>
   </mat-card-title-group>
   <mat-card-content>
-    <p>Our Stuff Here</p>
+    <app-order-entry (orderPlaced)="placeOrder($event)"></app-order-entry> 
+    <app-order-display *ngIf="!!(order$ | async)" [order]="order$ | async" [item]="item$ | async"></app-order-display>
   </mat-card-content>
 </mat-card>
